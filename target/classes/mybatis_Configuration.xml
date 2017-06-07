@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<properties resource="application.properties"></properties>
+
+	<typeAliases>
+		<typeAlias alias="Student" type="com.model.Student" />
+		<typeAlias alias="College" type="com.model.College" />
+		<typeAlias alias="Teacher" type="com.model.Teacher" />
+	</typeAliases>
+
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${xxp.jdbc.driverClassName}" />
+				<property name="url" value="${xxp.jdbc.jdbcUrl}" />
+				<property name="username" value="${xxp.jdbc.username}" />
+				<property name="password" value="" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<mappers>
+		<mapper resource="sql/StudentMapper.xml" />
+		<mapper resource="sql/CollegeMapper.xml" />
+		<mapper resource="sql/TeacherMapper.xml" />
+	</mappers>
+</configuration>
